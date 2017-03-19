@@ -7,17 +7,10 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
 import com.dd.processbutton.iml.ActionProcessButton;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.williamsumitromytextview.pikachisemarket.R;
 import com.williamsumitromytextview.pikachisemarket.sql.DatabaseHelper;
 import com.williamsumitromytextview.pikachisemarket.validation.inputValidation;
@@ -43,16 +36,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private com.williamsumitromytextview.pikachisemarket.validation.inputValidation inputValidation;
     private DatabaseHelper databaseHelper;
 
-//    private LoginButton loginFacebook;
-//    private CallbackManager callbackManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
-//        FacebookSdk.sdkInitialize(getApplicationContext());
-//        callbackManager = CallbackManager.Factory.create();
         initViews();
         initListeners();
         initObjects();
@@ -73,7 +61,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         textViewLinkRegister = (AppCompatTextView) findViewById(R.id.textViewLinkRegister);
 
-//        loginFacebook = (LoginButton) findViewById(R.id.LoginFacebook);
 
     }
 
@@ -98,26 +85,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 Intent intentRegister = new Intent(getApplicationContext(), Register.class);
                 startActivity(intentRegister);
                 break;
-//            case R.id.LoginFacebook:
-//                setContentView(R.layout.activity_login);
-//                loginFacebook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-//                    @Override
-//                    public void onSuccess(LoginResult loginResult) {
-//                        Intent accountsIntent = new Intent(activity, UserList.class);
-//                        startActivity(accountsIntent);
-//                    }
-//
-//                    @Override
-//                    public void onCancel() {
-//
-//                    }
-//
-//                    @Override
-//                    public void onError(FacebookException error) {
-//
-//                    }
-//                });
-//                break;
         }
     }
     private void verifyFromSQLite() {
