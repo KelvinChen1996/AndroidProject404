@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_Bookmark"
+            android:icon="@drawable/ic_book"
+            android:title="Bookmark" />
+        <item
+            android:id="@+id/nav_Alerts"
+            android:icon="@drawable/ic_notifications"
+            android:title="Franchise Alerts" />
+    </group>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_AboutUs"
+                android:icon="@drawable/ic_contact"
+                android:title="About Us" />
+            <item
+                android:id="@+id/nav_Rate"
+                android:icon="@drawable/ic_love"
+                android:title="Rate Our App" />
+            <item
+                android:id="@+id/nav_Privacy"
+                android:icon="@drawable/ic_security"
+                android:title="Privacy / Terms of Use" />
+            <item
+                android:id="@+id/nav_How"
+                android:icon="@drawable/ic_build"
+                android:title="How it Works" />
+        </menu>
+    </item>
+
+</menu>

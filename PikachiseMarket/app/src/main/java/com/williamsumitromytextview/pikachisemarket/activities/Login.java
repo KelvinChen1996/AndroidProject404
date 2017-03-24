@@ -116,7 +116,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                         public void run() {
                             ButtonLogin.setEnabled(true);
                             ButtonLogin.setMode(ActionProcessButton.Mode.PROGRESS);
-                            Intent accountsIntent = new Intent(activity, UserList.class);
+                            Intent accountsIntent = new Intent(activity, Home.class);
                             accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
                             emptyInputEditText();
                             startActivity(accountsIntent);
