@@ -48,33 +48,23 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
 
     private void initViews() {
-
         nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
-
         textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
         textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
-
         textInputEditTextEmail = (TextInputEditText) findViewById(R.id.textInputEditTextEmail);
         textInputEditTextPassword = (TextInputEditText) findViewById(R.id.textInputEditTextPassword);
-
         ButtonLogin = (ActionProcessButton) findViewById(R.id.btn_Login);
-
         textViewLinkRegister = (AppCompatTextView) findViewById(R.id.textViewLinkRegister);
-
-
     }
 
     private void initListeners() {
         ButtonLogin.setOnClickListener(this);
         textViewLinkRegister.setOnClickListener(this);
     }
-
     private void initObjects() {
         databaseHelper = new DatabaseHelper(activity);
         inputValidation = new inputValidation(activity);
-
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -116,7 +106,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                         public void run() {
                             ButtonLogin.setEnabled(true);
                             ButtonLogin.setMode(ActionProcessButton.Mode.PROGRESS);
-                            Intent accountsIntent = new Intent(activity, Home.class);
+                            Intent accountsIntent = new Intent(activity, MainActivity.class);
                             accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
                             emptyInputEditText();
                             startActivity(accountsIntent);

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_Home"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="Home" />
         <item
-            android:id="@+id/nav_Bookmark"
+            android:id="@+id/nav_bookmark"
             android:icon="@drawable/ic_book"
             android:title="Bookmark" />
         <item
-            android:id="@+id/nav_Alerts"
+            android:id="@+id/nav_franchise_alerts"
             android:icon="@drawable/ic_notifications"
             android:title="Franchise Alerts" />
     </group>
@@ -19,21 +18,21 @@
     <item android:title="Others">
         <menu>
             <item
-                android:id="@+id/nav_AboutUs"
+                android:id="@+id/nav_about_us"
                 android:icon="@drawable/ic_contact"
                 android:title="About Us" />
             <item
-                android:id="@+id/nav_Rate"
+                android:id="@+id/nav_rate_our_app"
                 android:icon="@drawable/ic_love"
                 android:title="Rate Our App" />
             <item
-                android:id="@+id/nav_Privacy"
+                android:id="@+id/nav_privacy"
                 android:icon="@drawable/ic_security"
                 android:title="Privacy / Terms of Use" />
             <item
-                android:id="@+id/nav_How"
+                android:id="@+id/nav_how_it_works"
                 android:icon="@drawable/ic_build"
-                android:title="How it Works" />
+                android:title="How It Works" />
         </menu>
     </item>
 
