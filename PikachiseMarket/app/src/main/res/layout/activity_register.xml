@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nestedScrollView"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimaryDark"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:paddingBottom="20dp"
     android:paddingLeft="40dp"
     android:paddingRight="40dp"
@@ -26,8 +26,8 @@
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pikachise Market"
             android:layout_gravity="center_horizontal"
+            android:text="Pikachise Market"
             android:textSize="30dp"
             />
 
@@ -44,7 +44,8 @@
                 android:hint="@string/hint_name"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:theme="@style/Theme.App.Base" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -60,7 +61,8 @@
                 android:hint="@string/hint_email"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:theme="@style/Theme.App.Base" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -76,7 +78,8 @@
                 android:hint="@string/hint_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:theme="@style/Theme.App.Base" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -92,21 +95,21 @@
                 android:hint="@string/hint_confirm_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:theme="@style/Theme.App.Base" />
         </android.support.design.widget.TextInputLayout>
 
         <com.dd.processbutton.iml.ActionProcessButton
-            android:background="#FFFFFF"
             android:id="@+id/btn_register"
+            pb_colorComplete="@color/green_complete"
+            pb_colorNormal="@color/blue_normal"
+            pb_colorPressed="@color/blue_pressed"
+            pb_colorProgress="@color/purple_progress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_register"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            pb_colorComplete="@color/green_complete"
-            pb_colorNormal="@color/blue_normal"
-            pb_colorPressed="@color/blue_pressed"
-            pb_colorProgress="@color/purple_progress"/>
+            android:textSize="18sp" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/appCompatTextViewLoginLink"
@@ -114,8 +117,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textColor="#fff8c6"
             android:text="Already a member? Login"
+            android:textColor="@color/red_error"
             android:textSize="16dp" />
     </android.support.v7.widget.LinearLayoutCompat>
 </android.support.v4.widget.NestedScrollView>
