@@ -1,14 +1,8 @@
 package com.williamsumitromytextview.pikachisemarket.Fragments;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -44,26 +38,29 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
 
-        List<App> apps = getApps();
+        List<App> bestRating = getBestRating();
         SnapAdapter snapAdapter = new SnapAdapter();
 
-        snapAdapter.addSnap(new Snap(Gravity.CENTER_HORIZONTAL, "Best Rating", apps));
-        snapAdapter.addSnap(new Snap(Gravity.CENTER_HORIZONTAL, "Newst Rating", apps));
+        snapAdapter.addSnap(new Snap(Gravity.CENTER_HORIZONTAL, "Best Rating", bestRating));
+        snapAdapter.addSnap(new Snap(Gravity.CENTER_HORIZONTAL, "Newst Franchise", bestRating));
 
 
         recyclerView.setAdapter(snapAdapter);
         return view;
     }
 
-    private List<App> getApps() {
+    private List<App> getBestRating() {
         List<App> apps = new ArrayList<>();
-        apps.add(new App("KFC", R.drawable.logo1, 4.6f));
-        apps.add(new App("Pizza Hut", R.drawable.logo2, 4.8f));
-        apps.add(new App("BMW", R.drawable.logo3, 4.5f));
-        apps.add(new App("Burger King", R.drawable.logo4, 4.2f));
-        apps.add(new App("Coca cola", R.drawable.logo5, 4.6f));
-        apps.add(new App("Pepsi", R.drawable.logo6, 3.9f));
-        apps.add(new App("Starbucks", R.drawable.logo7, 4.6f));
+        apps.add(new App("McDonald's", R.drawable.logo_mcdonalds, 3.93f));
+        apps.add(new App("SUBWAY®", R.drawable.logo_subway, 3.84f));
+        apps.add(new App("KFC", R.drawable.logo_kfc, 3.82f));
+        apps.add(new App("Burger King", R.drawable.logo_burgerking, 3.75f));
+        apps.add(new App("Pizza Hut", R.drawable.logo_pizza, 3.7f));
+        apps.add(new App("7 Eleven", R.drawable.logo_7eleven, 3.68f));
+        apps.add(new App("Wyndham Hotels and Resorts", R.drawable.logo_wyndhamhotelsandresorts, 3.65f));
+        apps.add(new App("InterContinental Hotels and Resorts", R.drawable.logo_inter, 3.62f));
+        apps.add(new App("Hilton Hotels & Resorts", R.drawable.logo_hiltonhotelsresorts, 3.6f));
+        apps.add(new App("Marriott International", R.drawable.logo_marriottinternational, 3.58f));
         return apps;
     }
 }
