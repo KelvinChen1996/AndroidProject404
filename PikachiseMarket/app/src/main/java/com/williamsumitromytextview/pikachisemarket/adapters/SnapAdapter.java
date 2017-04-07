@@ -57,7 +57,7 @@ public class SnapAdapter extends RecyclerView.Adapter<SnapAdapter.ViewHolder> {
         new LinearSnapHelper().attachToRecyclerView(holder.recyclerView);
 
 
-        holder.recyclerView.setAdapter(new Adapter(snap.getApps()));
+        holder.recyclerView.setAdapter(new AdapterBestRatings(snap.getApps()));
     }
 
     @Override

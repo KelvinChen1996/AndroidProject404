@@ -24,4 +24,11 @@
         android:clipToPadding="false"
         android:padding="4dp" />
 
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/home_franchiselist"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:clipToPadding="false"-->
+    <!--android:padding="4dp" />-->
 </LinearLayout>

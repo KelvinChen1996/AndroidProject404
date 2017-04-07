@@ -2,6 +2,7 @@ package com.williamsumitromytextview.pikachisemarket.Fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.ArrayRes;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,8 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.williamsumitromytextview.pikachisemarket.R;
+import com.williamsumitromytextview.pikachisemarket.adapters.AdapterHomeFranchiseList;
 import com.williamsumitromytextview.pikachisemarket.adapters.SnapAdapter;
 import com.williamsumitromytextview.pikachisemarket.model.App;
+import com.williamsumitromytextview.pikachisemarket.model.DataListFranchiseHome;
+import com.williamsumitromytextview.pikachisemarket.model.ListFranchiseHome;
 import com.williamsumitromytextview.pikachisemarket.model.Snap;
 
 import java.util.ArrayList;
@@ -21,22 +25,30 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements AdapterHomeFranchiseList.itemClickCallBack {
 
     private View view;
-    private RecyclerView recyclerView;
-
-    public HomeFragment() {
-
-    }
+    private RecyclerView rvFranchiseBest, rvHomeFranchiseList;
+    private ArrayList listdata;
+    private AdapterHomeFranchiseList adapterHomeFranchiseList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setHasFixedSize(true);
+        rvFranchiseBest = (RecyclerView) view.findViewById(R.id.recyclerviewFranchiseBest);
+        rvFranchiseBest.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rvFranchiseBest.setHasFixedSize(true);
+
+
+//        listdata = (ArrayList) DataListFranchiseHome.getlistfranchisehome();
+//        rvHomeFranchiseList = (RecyclerView) view.findViewById(R.id.recyclerviewFranchiseList);
+//        rvHomeFranchiseList.setLayoutManager(new LinearLayoutManager(getActivity()));
+//
+//
+//        adapterHomeFranchiseList = new AdapterHomeFranchiseList(DataListFranchiseHome.getlistfranchisehome(), getActivity());
+//        rvHomeFranchiseList.setAdapter(adapterHomeFranchiseList);
+//        adapterHomeFranchiseList.setitemclickcallback(this);
 
         List<App> bestRating = getBestRating();
         SnapAdapter snapAdapter = new SnapAdapter();
@@ -44,8 +56,7 @@ public class HomeFragment extends Fragment {
         snapAdapter.addSnap(new Snap(Gravity.CENTER_HORIZONTAL, "Best Rating", bestRating));
         snapAdapter.addSnap(new Snap(Gravity.CENTER_HORIZONTAL, "Newst Franchise", bestRating));
 
-
-        recyclerView.setAdapter(snapAdapter);
+        rvFranchiseBest.setAdapter(snapAdapter);
         return view;
     }
 
@@ -62,5 +73,10 @@ public class HomeFragment extends Fragment {
         apps.add(new App("Hilton Hotels & Resorts", R.drawable.logo_hiltonhotelsresorts, 3.6f));
         apps.add(new App("Marriott International", R.drawable.logo_marriottinternational, 3.58f));
         return apps;
+    }
+
+    @Override
+    public void onItemClick(int p) {
+
     }
 }

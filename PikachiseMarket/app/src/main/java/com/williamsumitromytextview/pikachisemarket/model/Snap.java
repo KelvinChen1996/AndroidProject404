@@ -16,7 +16,6 @@ public class Snap {
         Text = text;
         Apps = apps;
     }
-
     public String getText() {
         return Text;
     }
