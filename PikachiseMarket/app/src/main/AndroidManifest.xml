@@ -29,7 +29,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.DetailEventActivity"></activity>
+        <activity android:name=".activities.DetailEventActivity" />
+        <activity
+            android:name=".activities.DetailFranchiseHome"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

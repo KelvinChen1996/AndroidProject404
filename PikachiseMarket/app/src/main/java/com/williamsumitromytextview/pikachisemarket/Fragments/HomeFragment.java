@@ -1,6 +1,7 @@
 package com.williamsumitromytextview.pikachisemarket.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.ArrayRes;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.williamsumitromytextview.pikachisemarket.R;
+import com.williamsumitromytextview.pikachisemarket.activities.DetailEventActivity;
+import com.williamsumitromytextview.pikachisemarket.activities.DetailFranchiseHome;
 import com.williamsumitromytextview.pikachisemarket.adapters.AdapterHomeFranchiseList;
 import com.williamsumitromytextview.pikachisemarket.adapters.SnapAdapter;
 import com.williamsumitromytextview.pikachisemarket.model.App;
@@ -78,6 +81,8 @@ public class HomeFragment extends Fragment implements AdapterHomeFranchiseList.i
 
     @Override
     public void onItemClick(int p) {
+        Intent intent = new Intent(getActivity(), DetailFranchiseHome.class);
+        startActivity(intent);
 
     }
 }

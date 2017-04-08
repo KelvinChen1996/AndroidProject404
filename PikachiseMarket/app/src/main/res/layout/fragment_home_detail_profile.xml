@@ -1,0 +1,199 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorwhitegold"
+    android:orientation="vertical"
+    tools:context="com.williamsumitromytextview.pikachisemarket.Fragments.HomeDetailProfile">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama              : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizza Nut" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis               : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileJenis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lokal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategori         : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileKategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Makanan dan Minuman" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Berdiri Sejak  : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileBerdiriSejak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Investasi         : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileInvestasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp. 1.000.000.000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alamat            : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jl. Thamrin No. 40 A Medan" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lokasi             : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileLokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indonesia, North Sumatera" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telepon          : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileTelepon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0812-3456-7890" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email               : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pizzawillkickyournuts@pizza.net.id" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Website          : " />
+
+        <TextView
+            android:id="@+id/homedetailprofileWebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.pizzawillkickyournuts.com" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi" />
+
+        <TextView
+            android:id="@+id/homedetailprofileDeskripsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdl;fkj;asdlkfjals;dk kjf;ladsjf;lasdjf ;asjdf;lsdajlf jsadlfjlasdjfl;" />
+    </LinearLayout>
+
+
+</LinearLayout>

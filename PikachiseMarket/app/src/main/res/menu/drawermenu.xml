@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <item
-        android:title="Home"
         android:id="@+id/nav_item_home"
-        android:icon="@drawable/ic_home"/>
-    <item android:title="Bookmark"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
         android:id="@+id/nav_item_bookmark"
-        android:icon="@drawable/ic_book"/>
+        android:icon="@drawable/ic_book"
+        android:title="Bookmark" />
 
-    <item android:title="Franchise Alerts"
+    <item
         android:id="@+id/nav_item_franchisealerts"
-        android:icon="@drawable/ic_notifications"/>
+        android:icon="@drawable/ic_notifications"
+        android:title="Franchise Alerts" />
 
 
 
     <item android:title="Others">
         <menu>
             <item
-                android:title="About Us"
                 android:id="@+id/nav_item_about_us"
-                android:icon="@drawable/ic_contact"/>
+                android:icon="@drawable/ic_contact"
+                android:title="About Us" />
             <item
-                android:title="Rate Our App"
                 android:id="@+id/nav_item_rate_our_ap"
-                android:icon="@drawable/ic_love"/>
+                android:icon="@drawable/ic_love"
+                android:title="Rate Our App" />
             <item
-                android:title="Privacy / Terms of Use"
                 android:id="@+id/nav_item_terms_of_use"
-                android:icon="@drawable/ic_security"/>
+                android:icon="@drawable/ic_security"
+                android:title="Privacy / Terms of Use" />
             <item
-                android:title="How It Works"
                 android:id="@+id/nav_item_how_it_works"
-                android:icon="@drawable/ic_build"/>
+                android:icon="@drawable/ic_build"
+                android:title="How It Works" />
         </menu>
     </item>
 </menu>
