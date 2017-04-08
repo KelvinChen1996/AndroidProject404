@@ -7,17 +7,12 @@ package com.williamsumitromytextview.pikachisemarket.model;
 public class App {
     private int Drawable;
     private String Name;
-    private float Rating;
 
-    public App(String name, int drawable, float rating) {
+    public App(String name, int drawable) {
         Drawable = drawable;
         Name = name;
-        Rating = rating;
     }
 
-    public float getRating() {
-        return Rating;
-    }
 
     public String getName() {
         return Name;

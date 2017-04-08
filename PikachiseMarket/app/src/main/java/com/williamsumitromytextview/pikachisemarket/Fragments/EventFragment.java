@@ -1,6 +1,7 @@
 package com.williamsumitromytextview.pikachisemarket.Fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,7 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
 import com.williamsumitromytextview.pikachisemarket.R;
 import com.williamsumitromytextview.pikachisemarket.activities.DetailEventActivity;
 import com.williamsumitromytextview.pikachisemarket.adapters.AdapterHomeFranchiseList;
@@ -28,11 +31,11 @@ public class EventFragment extends Fragment implements AdapterListEvent.itemClic
     private static final String EXTRA_ISI = "EXTRA_ISI";
     private static final String EXTRA_JADWAL = "EXTRA_JADWAL";
     private static final String EXTRA_ALAMAT = "EXTRA_ALAMAT";
-
+    private static final String EXTRA_GAMBAR = "EXTRA_GAMBAR";
+    ImageView img;
     private RecyclerView recView;
     private AdapterListEvent adapterListEvent;
     private ArrayList listdata;
-
     public EventFragment() {
         // Required empty public constructor
     }

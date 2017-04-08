@@ -34,7 +34,7 @@ public class AdapterListEvent extends RecyclerView.Adapter<AdapterListEvent.Even
 
     @Override
     public EventHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.listevent, parent, false);
+        View view = inflater.inflate(R.layout.list_event, parent, false);
         return new EventHolder(view);
     }
 

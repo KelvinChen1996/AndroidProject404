@@ -35,7 +35,6 @@ public class AdapterBestRatings extends RecyclerView.Adapter<AdapterBestRatings.
         App app = appList.get(position);
         holder.imageView.setImageResource(app.getDrawable());
         holder.nameTextView.setText(app.getName());
-        holder.ratingTextView.setText(String.valueOf(app.getRating()));
     }
 
     @Override
@@ -53,7 +52,6 @@ public class AdapterBestRatings extends RecyclerView.Adapter<AdapterBestRatings.
             itemView.setOnClickListener(this);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
             nameTextView = (TextView) itemView.findViewById(R.id.nameTextView);
-            ratingTextView = (TextView) itemView.findViewById(R.id.ratingTextView);
         }
 
         @Override

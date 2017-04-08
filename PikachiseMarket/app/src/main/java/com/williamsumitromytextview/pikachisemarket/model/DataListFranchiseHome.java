@@ -10,8 +10,18 @@ import java.util.List;
  */
 
 public class DataListFranchiseHome {
-    private static final String[] NamaFranchise = {"7 Eleven", "Pizza Hut", "KFC", "Burger King", "McDonalds"};
-    private static final String[] NamaPTFranchise = {"PT. tujuh sebelas", "PT. Topi PIzza", "PT. Kentang Fundamental Cinta", "PT. Raja Roti Burger", "PT. Disney Lands"};
+    private static final String[] NamaFranchise =
+            {"7 Eleven",
+                    "Pizza Hut",
+                    "KFC",
+                    "Burger King",
+                    "McDonalds"};
+    private static final String[] NamaPTFranchise =
+            {"PT. tujuh sebelas",
+                    "PT. Topi PIzza",
+                    "PT. Kentang Fundamental Cinta",
+                    "PT. Raja Roti Burger",
+                    "PT. Disney Lands"};
     private static final int[] GambarBanner = {R.drawable.banner, R.drawable.banner1, R.drawable.banner2, R.drawable.banner3, R.drawable.banner4};
     private static final int[] JumlahFranchisee = {5, 10, 15, 3, 24};
 

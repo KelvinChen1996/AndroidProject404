@@ -34,17 +34,17 @@ public class AdapterHomeFranchiseList extends RecyclerView.Adapter<AdapterHomeFr
     }
 
     @Override
-    public AdapterHomeFranchiseList.EventHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.activity_home_franchise_list, parent, false);
+    public EventHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = inflater.inflate(R.layout.list_home_franchiselist, parent, false);
         return new EventHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(AdapterHomeFranchiseList.EventHolder holder, int position) {
+    public void onBindViewHolder(EventHolder holder, int position) {
         ListFranchiseHome franchiseelist = listfranchisehome.get(position);
         holder.namafranchise.setText(franchiseelist.getNamaFranchise());
         holder.namaptfranchise.setText(franchiseelist.getNamaPTFranchise());
-        holder.nfranchisee.setText(franchiseelist.getJumlahFranchisee());
+        holder.nfranchisee.setText(String.valueOf(franchiseelist.getJumlahFranchisee()));
         holder.gambarbanner.setImageResource(franchiseelist.getBannerFranchise());
     }
 

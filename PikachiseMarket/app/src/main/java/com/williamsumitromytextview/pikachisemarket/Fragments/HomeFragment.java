@@ -32,6 +32,9 @@ public class HomeFragment extends Fragment implements AdapterHomeFranchiseList.i
     private ArrayList listdata;
     private AdapterHomeFranchiseList adapterHomeFranchiseList;
 
+    public HomeFragment() {
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,39 +42,37 @@ public class HomeFragment extends Fragment implements AdapterHomeFranchiseList.i
         rvFranchiseBest = (RecyclerView) view.findViewById(R.id.recyclerviewFranchiseBest);
         rvFranchiseBest.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvFranchiseBest.setHasFixedSize(true);
-
-
-//        listdata = (ArrayList) DataListFranchiseHome.getlistfranchisehome();
-//        rvHomeFranchiseList = (RecyclerView) view.findViewById(R.id.recyclerviewFranchiseList);
-//        rvHomeFranchiseList.setLayoutManager(new LinearLayoutManager(getActivity()));
-//
-//
-//        adapterHomeFranchiseList = new AdapterHomeFranchiseList(DataListFranchiseHome.getlistfranchisehome(), getActivity());
-//        rvHomeFranchiseList.setAdapter(adapterHomeFranchiseList);
-//        adapterHomeFranchiseList.setitemclickcallback(this);
-
         List<App> bestRating = getBestRating();
         SnapAdapter snapAdapter = new SnapAdapter();
-
-        snapAdapter.addSnap(new Snap(Gravity.CENTER_HORIZONTAL, "Best Rating", bestRating));
-        snapAdapter.addSnap(new Snap(Gravity.CENTER_HORIZONTAL, "Newst Franchise", bestRating));
-
+        snapAdapter.addSnap(new Snap(Gravity.CENTER, "Best Rating", bestRating));
         rvFranchiseBest.setAdapter(snapAdapter);
+
+
+        listdata = (ArrayList) DataListFranchiseHome.getlistfranchisehome();
+        rvHomeFranchiseList = (RecyclerView) view.findViewById(R.id.recyclerviewFranchiseList);
+        rvHomeFranchiseList.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
+        adapterHomeFranchiseList = new AdapterHomeFranchiseList(DataListFranchiseHome.getlistfranchisehome(), getActivity());
+        rvHomeFranchiseList.setAdapter(adapterHomeFranchiseList);
+        adapterHomeFranchiseList.setitemclickcallback(this);
+
+
         return view;
     }
 
     private List<App> getBestRating() {
         List<App> apps = new ArrayList<>();
-        apps.add(new App("McDonald's", R.drawable.logo_mcdonalds, 3.93f));
-        apps.add(new App("SUBWAY®", R.drawable.logo_subway, 3.84f));
-        apps.add(new App("KFC", R.drawable.logo_kfc, 3.82f));
-        apps.add(new App("Burger King", R.drawable.logo_burgerking, 3.75f));
-        apps.add(new App("Pizza Hut", R.drawable.logo_pizza, 3.7f));
-        apps.add(new App("7 Eleven", R.drawable.logo_7eleven, 3.68f));
-        apps.add(new App("Wyndham Hotels and Resorts", R.drawable.logo_wyndhamhotelsandresorts, 3.65f));
-        apps.add(new App("InterContinental Hotels and Resorts", R.drawable.logo_inter, 3.62f));
-        apps.add(new App("Hilton Hotels & Resorts", R.drawable.logo_hiltonhotelsresorts, 3.6f));
-        apps.add(new App("Marriott International", R.drawable.logo_marriottinternational, 3.58f));
+        apps.add(new App("McDonald's", R.drawable.logo_mcdonalds));
+        apps.add(new App("SUBWAY®", R.drawable.logo_subway));
+        apps.add(new App("KFC", R.drawable.logo_kfc));
+        apps.add(new App("Burger King", R.drawable.logo_burgerking));
+        apps.add(new App("Pizza Hut", R.drawable.logo_pizza));
+        apps.add(new App("7 Eleven", R.drawable.logo_7eleven));
+        apps.add(new App("Wyndham Hotels and Resorts", R.drawable.logo_wyndhamhotelsandresorts));
+        apps.add(new App("InterContinental Hotels and Resorts", R.drawable.logo_inter));
+        apps.add(new App("Hilton Hotels & Resorts", R.drawable.logo_hiltonhotelsresorts));
+        apps.add(new App("Marriott International", R.drawable.logo_marriottinternational));
         return apps;
     }
 
