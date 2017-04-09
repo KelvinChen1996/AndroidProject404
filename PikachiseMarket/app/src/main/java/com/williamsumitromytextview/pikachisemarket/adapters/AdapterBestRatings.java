@@ -17,11 +17,11 @@ import java.util.List;
  * Created by william on 04/04/2017.
  */
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class AdapterBestRatings extends RecyclerView.Adapter<AdapterBestRatings.ViewHolder> {
 
     private List<App> appList;
 
-    public Adapter(List<App> mApps) {
+    public AdapterBestRatings(List<App> mApps) {
         appList = mApps;
     }
 
@@ -31,11 +31,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(Adapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(AdapterBestRatings.ViewHolder holder, int position) {
         App app = appList.get(position);
         holder.imageView.setImageResource(app.getDrawable());
         holder.nameTextView.setText(app.getName());
-        holder.ratingTextView.setText(String.valueOf(app.getRating()));
     }
 
     @Override
@@ -53,7 +52,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             itemView.setOnClickListener(this);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
             nameTextView = (TextView) itemView.findViewById(R.id.nameTextView);
-            ratingTextView = (TextView) itemView.findViewById(R.id.ratingTextView);
         }
 
         @Override
