@@ -38,6 +38,7 @@ public class DetailEventActivity extends AppCompatActivity {
         isidetail.setText(extras.getString(EXTRA_ISI));
         jadwaldetail.setText(extras.getString(EXTRA_JADWAL));
         alamatdetail.setText(extras.getString(EXTRA_ALAMAT));
+        gambardetail.setImageResource(extras.getInt(EXTRA_GAMBAR));
 //        String gettingImageUrl = extras.getString(EXTRA_GAMBAR);
 //        Picasso.with(this).load(gettingImageUrl).into(gambardetail);
         // Yang gambar harus pakai database https://www.youtube.com/watch?v=3-qzF_2LALk

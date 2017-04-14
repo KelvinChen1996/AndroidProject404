@@ -67,6 +67,7 @@ public class EventFragment extends Fragment implements AdapterListEvent.itemClic
         extras.putString(EXTRA_ISI, event.getISIEVENT());
         extras.putString(EXTRA_JADWAL, event.getWAKTUEVENT());
         extras.putString(EXTRA_ALAMAT, event.getALAMATEVENT());
+        extras.putInt(EXTRA_GAMBAR,event.getGAMBAREVENT());
         intent.putExtra(BUNDLE_EXTRAS, extras);
         startActivity(intent);
     }

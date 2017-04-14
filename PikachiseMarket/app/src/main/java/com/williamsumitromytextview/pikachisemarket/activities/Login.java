@@ -18,6 +18,8 @@ import com.williamsumitromytextview.pikachisemarket.validation.inputValidation;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.williamsumitromytextview.pikachisemarket.Session.SessionManagement;
+
 public class Login extends AppCompatActivity implements View.OnClickListener{
     private final AppCompatActivity activity = Login.this;
 
@@ -35,6 +37,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     private com.williamsumitromytextview.pikachisemarket.validation.inputValidation inputValidation;
     private DatabaseHelper databaseHelper;
+
+    private SessionManagement session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,10 +110,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                         public void run() {
                             ButtonLogin.setEnabled(true);
                             ButtonLogin.setMode(ActionProcessButton.Mode.PROGRESS);
-                            Intent accountsIntent = new Intent(activity, MainActivity.class);
-                            accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
+                            //Intent accountsIntent = new Intent(activity, MainActivity.class);
+                            //accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
+                            //startActivity(accountsIntent);
+
+                            session = new SessionManagement(getApplicationContext());
+                            session.createLoginSession("nama",textInputEditTextEmail.getText().toString().trim() );
+
                             emptyInputEditText();
-                            startActivity(accountsIntent);
+                            // Staring MainActivity
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(i);
+                            finish();
                         }
                     });
                 }

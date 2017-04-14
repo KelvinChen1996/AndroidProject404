@@ -18,7 +18,6 @@
         android:title="Franchise Alerts" />
 
 
-
     <item android:title="Others">
         <menu>
             <item
@@ -39,4 +38,8 @@
                 android:title="How It Works" />
         </menu>
     </item>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="logout" />
 </menu>

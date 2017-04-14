@@ -9,7 +9,7 @@ import android.util.Log;
 import com.williamsumitromytextview.pikachisemarket.R;
 
 public class Greetings extends AppCompatActivity {
-    private static int splashtimer = 3000;
+    private static int splashtimer = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class Greetings extends AppCompatActivity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(Greetings.this, Login.class);
+                Intent i = new Intent(Greetings.this, MainActivity.class);
                 startActivity(i);
 
                 // close this activity

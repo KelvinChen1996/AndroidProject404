@@ -20,6 +20,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.williamsumitromytextview.pikachisemarket.Fragments.About_UsFragment;
@@ -32,18 +34,31 @@ import com.williamsumitromytextview.pikachisemarket.Fragments.Rate_Our_AppFragme
 import com.williamsumitromytextview.pikachisemarket.Fragments.Tab;
 import com.williamsumitromytextview.pikachisemarket.R;
 
+import com.williamsumitromytextview.pikachisemarket.Session.SessionManagement;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     NavigationView mNavigationView;
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
+
     Toolbar toolbar;
+    SessionManagement session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initViews();
 
+        initViews();
+        session = new SessionManagement(getApplicationContext());
+        session.checkLogin();
+        HashMap<String, String> user = session.getUserDetails();
+        String email = user.get(SessionManagement.KEY_EMAIL);
+
+        View header = mNavigationView.getHeaderView(0);
+        TextView TvEmail = (TextView) header.findViewById(R.id.UserEmail);
+        TvEmail.setText(email);
 
         //membuat fragment tab menjadi fragment pertama
         mFragmentManager = getSupportFragmentManager();
@@ -88,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.containerview, new How_It_WorksFragment()).commit();
 
+                }
+
+                if ((menuItem.getItemId() == R.id.nav_logout)) {
+                    session.logoutUser();
+                    finish();
                 }
 
                 return false;
