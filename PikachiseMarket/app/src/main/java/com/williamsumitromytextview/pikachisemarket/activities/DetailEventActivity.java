@@ -29,6 +29,18 @@ public class DetailEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_list_event);
 
+        toolbar = (Toolbar) findViewById(R.id.toolbarDetailEvent);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         Bundle extras = getIntent().getBundleExtra(BUNDLE_EXTRAS);
         juduldetail = (TextView) findViewById(R.id.detailEventJudul);
         isidetail = (TextView) findViewById(R.id.detaileventIsi);
