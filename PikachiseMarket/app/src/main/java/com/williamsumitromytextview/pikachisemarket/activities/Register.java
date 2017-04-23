@@ -146,6 +146,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                             ButtonRegister.setMode(ActionProcessButton.Mode.PROGRESS);
                             ButtonRegister.setProgress(100);
                             startActivity(new Intent(Register.this, Login.class));
+                            finish();
                         }
                     });
                 }

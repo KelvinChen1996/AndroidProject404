@@ -4,6 +4,8 @@ import android.content.Context;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ public class DetailEventActivity extends AppCompatActivity {
     private static final String EXTRA_GAMBAR = "EXTRA_GAMBAR";
     TextView juduldetail, isidetail, jadwaldetail, alamatdetail;
     ImageView gambardetail;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

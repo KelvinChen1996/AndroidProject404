@@ -78,6 +78,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
             case R.id.textViewLinkRegister:
                 Intent intentRegister = new Intent(getApplicationContext(), Register.class);
                 startActivity(intentRegister);
+                finish();
                 break;
         }
     }

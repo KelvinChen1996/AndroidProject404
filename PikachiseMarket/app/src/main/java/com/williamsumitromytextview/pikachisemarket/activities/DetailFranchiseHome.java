@@ -7,6 +7,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.williamsumitromytextview.pikachisemarket.Fragments.Tab;
 import com.williamsumitromytextview.pikachisemarket.Fragments.TabDetailFranchiseHome;
@@ -31,6 +32,16 @@ public class DetailFranchiseHome extends AppCompatActivity {
 
     private void initViews() {
         toolbar = (Toolbar) findViewById(R.id.toolbardetailfranchisehome);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutdetailfranchisehome);
     }
 }
