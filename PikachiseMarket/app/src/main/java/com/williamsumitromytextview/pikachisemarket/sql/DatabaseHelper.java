@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.williamsumitromytextview.pikachisemarket.model.User;
+import com.williamsumitromytextview.pikachisemarket.model.DaftarFranchise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
     private static final String DATABASE_NAME = "UserManager.db";
 
@@ -34,6 +35,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
+    private String CREATE_DAFTARFRANCHISE_TABLE ="CREATE TABLE daftar_franchise (" +
+            "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "nama_franchise TEXT ," +
+            "keterangan TEXT ," +
+            "jenis TEXT ," +
+            "kategori TEXT ," +
+            "berdiri_sejak TEXT ," +
+            "investasi INTEGER ," +
+            "franchise_fee INTEGER ," +
+            "royalty_fee INTEGER ," +
+            "website TEXT ," +
+            "alamat TEXT ," +
+            "lokasi TEXT ," +
+            "telepon TEXT ," +
+            "email TEXT " +
+            ")";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -41,6 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
+        db.execSQL(CREATE_DAFTARFRANCHISE_TABLE);
     }
 
 
@@ -176,6 +195,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
 
+        return false;
+    }
+
+    public void addFranchise(DaftarFranchise franchise)
+    {
+        if (!checkFranchise(franchise.getId()))
+        {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("id",franchise.getId());
+            values.put("nama_franchise",franchise.getNama_franchise());
+            values.put("keterangan",franchise.getKeterangan());
+            values.put("jenis",franchise.getJenis());
+            values.put("kategori",franchise.getKategori());
+            values.put("berdiri_sejak",franchise.getBerdiri_sejak());
+            values.put("investasi",franchise.getInvestasi()+"");
+            values.put("franchise_fee",franchise.getFranchise_fee()+"");
+            values.put("royalty_fee",franchise.getRoyalty_fee()+"");
+            values.put("website",franchise.getWebsite());
+            values.put("alamat",franchise.getAlamat());
+            values.put("lokasi",franchise.getLokasi());
+            values.put("telepon",franchise.getTelepon());
+            values.put("email",franchise.getEmail());
+
+            db.insert("daftar_franchise", null, values);
+            db.close();
+        }
+    }
+
+    public boolean checkFranchise(int id)
+    {
+        String[] columns = {"id"};
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = "id" + " = ?";
+
+        String idstr = String.valueOf(id);
+        String[] selectionArgs = {idstr};
+
+        Cursor cursor = db.query("daftar_franchise", columns, selection, selectionArgs, null, null, null);
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (cursorCount > 0) {
+            return true;
+        }
         return false;
     }
 }

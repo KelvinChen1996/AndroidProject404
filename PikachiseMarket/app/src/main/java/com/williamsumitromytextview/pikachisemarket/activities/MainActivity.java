@@ -35,6 +35,8 @@ import com.williamsumitromytextview.pikachisemarket.Fragments.Tab;
 import com.williamsumitromytextview.pikachisemarket.R;
 
 import com.williamsumitromytextview.pikachisemarket.Session.SessionManagement;
+import com.williamsumitromytextview.pikachisemarket.model.DaftarFranchise;
+import com.williamsumitromytextview.pikachisemarket.sql.DatabaseHelper;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     SessionManagement session;
+    DatabaseHelper databasehelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initFranchise();
         initViews();
         session = new SessionManagement(getApplicationContext());
         session.checkLogin();
@@ -149,5 +153,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initFranchise()
+    {
+        databasehelper = new DatabaseHelper(MainActivity.this);
+
+        DaftarFranchise KFC = new DaftarFranchise();
+        KFC.setId(1);
+        KFC.setNama_franchise("Kentucky Fried Chicken");
+        KFC.setKeterangan("enak");
+        KFC.setJenis("Asing");
+        KFC.setKategori("Makanan");
+        KFC.setBerdiri_sejak("2010");
+        KFC.setInvestasi(100000000);
+        KFC.setFranchise_fee(20000000);
+        KFC.setRoyalty_fee(30000000);
+        KFC.setWebsite("www.kfc.co.id");
+        KFC.setAlamat("Jl ABC");
+        KFC.setLokasi("Sumut");
+        KFC.setTelepon("7312345");
+        KFC.setEmail("kfc@outlook.net");
+        databasehelper.addFranchise(KFC);
     }
 }
